@@ -1,0 +1,6 @@
+/.cache
+/.smake
+/.ninja_log
+/package-lock.json
+/compile_commands.json
+node_modules
