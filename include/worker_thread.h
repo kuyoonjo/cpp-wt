@@ -52,7 +52,7 @@ public:
   explicit Mailbox(size_t queue_size = DEFAULT_QUEUE_SIZE) {
     m_id = ++last_mailbox_id;
     m_queue = std::make_shared<queue_t>(queue_size);
-    mailboxes.emplace(m_id, this);
+    mailboxes.emplace(m_id, std::make_shared<Mailbox>(*this));
   }
 
   bool postMessage(size_t to_mailbox_id, buffer_t buffer) {

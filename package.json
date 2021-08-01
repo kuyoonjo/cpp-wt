@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compdb:darwin": "smake build --compdb test_darwin_arm64",
+    "compdb:darwin": "smake build --compdb test_darwin_x86_64",
     "compdb:linux": "smake build --compdb arch_linux_arm64 homedir_linux_arm64 network_interfaces_linux_arm64 tmpdir_linux_arm64",
     "compdb:win32": "smake build --compdb arch_win32_x86_64 homedir_win32_x86_64 network_interfaces_win32_x86_64 tmpdir_win32_x86_64"
   },
