@@ -98,6 +98,7 @@ public:
         receiveMessage();
       }
     });
+    m_thread->detach();
   };
 
   void exit() { m_exit_flag = true; }

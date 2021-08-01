@@ -36,23 +36,25 @@ public:
 };
 
 int main() {
-  wt::Mailbox master;
-  wt::Mailbox master2;
-  std::cout << "master: " << master.id << std::endl;
-  std::cout << "master2: " << master2.id << std::endl;
-  auto w1 = Worker("W1");
-  auto w2 = Worker2("W2", &w1);
-  for (int i = 0;; ++i) {
-    if (i < 10) {
-      wt::buffer_t m1(1);
-      wt::buffer_t m2 = {1};
-      master.postMessage(w1.id, m1);
-      master.postMessage(w2.id, m2);
-      std::this_thread::sleep_for(1s);
-    } else {
-      w1.exit();
-      w2.exit();
-    }
-  }
+  // wt::Mailbox master;
+  // wt::Mailbox master2;
+  // std::cout << "master: " << master.id << std::endl;
+  // std::cout << "master2: " << master2.id << std::endl;
+  // auto w1 = Worker("W1");
+  // auto w2 = Worker2("W2", &w1);
+  // for (int i = 0;; ++i) {
+  //   if (i < 10) {
+  //     wt::buffer_t m1(1);
+  //     wt::buffer_t m2 = {1};
+  //     master.postMessage(w1.id, m1);
+  //     master.postMessage(w2.id, m2);
+  //     std::this_thread::sleep_for(1s);
+  //   } else {
+  //     w1.exit();
+  //     w2.exit();
+  //   }
+  // }
+  auto w = new wt::Worker();
+  delete w;
   return 0;
 }
